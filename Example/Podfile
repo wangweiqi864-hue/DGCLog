@@ -1,0 +1,15 @@
+install! 'cocoapods', :warn_for_unused_master_specs_repo => false
+
+use_frameworks!
+
+platform :ios, '13.0'
+
+target 'DGCLog_Example' do
+  pod 'DGCLog', :path => '../'
+
+  target 'DGCLog_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

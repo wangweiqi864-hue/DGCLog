@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+
+# CocoaPods generated
+Pods/
+_Pods.xcodeproj
+
+# Xcode user data
+*.xcuserstate
+xcuserdata/
+
+# Build artifacts
+build/
+DerivedData/
+
+# SwiftPM
+.swiftpm/
+
+# CocoaPods lock for sample app (optional)
+# Uncomment if you don't want to track lock file
+# Example/Podfile.lock

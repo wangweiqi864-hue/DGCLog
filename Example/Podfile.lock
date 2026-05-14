@@ -1,0 +1,23 @@
+PODS:
+  - DGCLog (0.1.0):
+    - SwiftyBeaver
+  - SwiftyBeaver (1.9.5)
+
+DEPENDENCIES:
+  - DGCLog (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftyBeaver
+
+EXTERNAL SOURCES:
+  DGCLog:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  DGCLog: ed32677d2a709265b48287b850fa434fc2b59c57
+  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
+
+PODFILE CHECKSUM: 9a17aa36e7a2230aa94dcf361c7650d1c96fc2a7
+
+COCOAPODS: 1.16.2
