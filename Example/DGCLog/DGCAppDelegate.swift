@@ -1,5 +1,5 @@
 //
-//  AppDelegate.swift
+//  DGCAppDelegate.swift
 //  DGCLog
 //
 //  Created by admin on 02/21/2024.
@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class DGCAppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -43,4 +43,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

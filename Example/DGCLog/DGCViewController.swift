@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DGCViewController.swift
 //  DGCLog
 //
 //  Created by admin on 02/21/2024.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DGCViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,4 +21,3 @@ class ViewController: UIViewController {
     }
 
 }
-

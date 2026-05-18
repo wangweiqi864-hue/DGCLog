@@ -12,68 +12,68 @@ public class DGCLog{
     
     private static let shared = DGCLog()
     
-    private let logger = SwiftyBeaver.self
-    private let consoleDestination = ConsoleDestination()
-    private let fileDestination = FileDestination()
+    private let dgc_logger = SwiftyBeaver.self
+    private let dgc_consoleDestination = ConsoleDestination()
+    private let dgc_fileDestination = FileDestination()
     
-    private let relativeLogDirectoryPath = "DGCLog/logs"
-    private var logFilePath = ""
+    private let dgc_relativeLogDirectoryPath = "DGCLog/logs"
+    private var dgc_logFilePath = ""
     
-    private init() { configureLogger() }
+    private init() { dgc_configureLogger() }
     
-    private func configureLogger() {
+    private func dgc_configureLogger() {
         
-        let documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first ?? ""
-        let logDirectoryPath = (documentDirectoryPath as NSString).appendingPathComponent(relativeLogDirectoryPath)
-        logFilePath = (logDirectoryPath as NSString).appendingPathComponent("log")
+        let dgc_documentDirectoryPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first ?? ""
+        let dgc_logDirectoryPath = (dgc_documentDirectoryPath as NSString).appendingPathComponent(dgc_relativeLogDirectoryPath)
+        dgc_logFilePath = (dgc_logDirectoryPath as NSString).appendingPathComponent("log")
         
-//        logFilePath = dir.appending(logFilePath)
+//        dgc_logFilePath = dir.appending(dgc_logFilePath)
         
         // 默认swiftybeaver.log文件日志
-        fileDestination.logFileAmount = 4
-        fileDestination.logFileURL = URL(fileURLWithPath: logFilePath)
-        fileDestination.format = "$D YYYY:MM:dd HH:mm:ss$d $L: $M"
+        dgc_fileDestination.logFileAmount = 4
+        dgc_fileDestination.logFileURL = URL(fileURLWithPath: dgc_logFilePath)
+        dgc_fileDestination.format = "$D YYYY:MM:dd HH:mm:ss$d $L: $M"
         
         // Xcode控制台日志
-        consoleDestination.format = "$D YYYY:MM:dd HH:mm:ss$d $L: $M"
+        dgc_consoleDestination.format = "$D YYYY:MM:dd HH:mm:ss$d $L: $M"
 
         //添加配置到SwiftyBeaver
-        logger.addDestination(consoleDestination)
-        logger.addDestination(fileDestination)
+        dgc_logger.addDestination(dgc_consoleDestination)
+        dgc_logger.addDestination(dgc_fileDestination)
     }
     
     public static func debug<T>(_ message: T, file: String = #file, function: String = #function, line: Int = #line) {
         autoreleasepool {
-            let sourceFileName = (file as NSString).lastPathComponent
-            let logMessage = "file=\(sourceFileName)::\(message)"
-            self.shared.logger.debug(logMessage)
+            let dgc_sourceFileName = (file as NSString).lastPathComponent
+            let dgc_logMessage = "file=\(dgc_sourceFileName)::\(message)"
+            self.shared.dgc_logger.debug(dgc_logMessage)
         }
     }
     
     
     public static func info<T>(_ message: T, file: String = #file, function: String = #function, line: Int = #line) {
         autoreleasepool {
-            let sourceFileName = (file as NSString).lastPathComponent
-            let logMessage = "file=\(sourceFileName)::\(message)"
-            self.shared.logger.info(logMessage)
+            let dgc_sourceFileName = (file as NSString).lastPathComponent
+            let dgc_logMessage = "file=\(dgc_sourceFileName)::\(message)"
+            self.shared.dgc_logger.info(dgc_logMessage)
         }
     }
 
     
     public static func error<T>(_ message: T, file: String = #file, function: String = #function, line: Int = #line) {
         autoreleasepool {
-            let sourceFileName = (file as NSString).lastPathComponent
-            let logMessage = "file=\(sourceFileName)::\(message)"
-            self.shared.logger.error(logMessage)
+            let dgc_sourceFileName = (file as NSString).lastPathComponent
+            let dgc_logMessage = "file=\(dgc_sourceFileName)::\(message)"
+            self.shared.dgc_logger.error(dgc_logMessage)
         }
     }
     
     // 打印的debu
     public static func log<T>(_ message: T, file: String = #file) {
         autoreleasepool {
-            let sourceFileName = (file as NSString).lastPathComponent
-            let logMessage = "file=\(sourceFileName)::\(message)"
-            self.shared.logger.debug(logMessage)
+            let dgc_sourceFileName = (file as NSString).lastPathComponent
+            let dgc_logMessage = "file=\(dgc_sourceFileName)::\(message)"
+            self.shared.dgc_logger.debug(dgc_logMessage)
         }
     }
     
